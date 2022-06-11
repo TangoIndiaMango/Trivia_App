@@ -4,8 +4,10 @@ from flask import Flask, request, abort, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 import random
-
+import sys
+import json
 from models import setup_db, Question, Category
+
 database_path = os.environ.get('DB_URL')
 QUESTIONS_PER_PAGE = 10
 
@@ -23,6 +25,7 @@ def paginate_questions(request, selection):
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__)
+    app.config.from_object('config')
     setup_db(app)
 
     """
