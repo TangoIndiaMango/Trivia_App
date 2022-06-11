@@ -12,6 +12,6 @@ DEBUG = True
 load_dotenv()
 
 database_name = 'trivia'
-# TODO IMPLEMENT DATABASE URL
+#  IMPLEMENT DATABASE URL
 SQLALCHEMY_DATABASE_URI = 'Postgresql://postgres:TIMMY@localhost:5432/trivia'
 SQLALCHEMY_TRACK_MODIFICATIONS= True
